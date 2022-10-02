@@ -1,18 +1,14 @@
-version: 2.1
-
+version: '2.1'
+orbs:
+  win: circleci/windows@5.0
 jobs:
   build:
-    machine:
-      image: 'windows-server-2019-vs2019:2022.08.1'
+    executor:
+      name: win/default
     steps:
       - checkout
-      - run:
-          name: "build"
-          command: .\build.ps1
-    environment:
-      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-
+      - run: ./build.ps1
 workflows:
-  build-workflow:
+  my-workflow:
     jobs:
       - build
