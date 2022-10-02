@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  win: circleci/windows@4.1.1 # The Windows orb give you everything you need to start using the Windows executor.
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
